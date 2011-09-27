@@ -1,4 +1,4 @@
-class Problem2
+class Fibinachi
   def all_fibonacci_numbers max_value_to_be_under
     var1 = 0
     var2 = 1

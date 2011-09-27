@@ -1,4 +1,4 @@
-require 'problem_7'
+require 'prime'
 
 class PrimeFactors
 	attr_reader :prime_factors

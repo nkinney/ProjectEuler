@@ -4,25 +4,25 @@ require 'spec_helper'
 #  1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 #  By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-describe Problem2 do
+describe Fibinachi do
   describe "gathering collectoins of fibonacci numbers" do
     it "should return all fibonacci numbers below 10" do
-      fibonacci_numbers = Problem2.new
+      fibonacci_numbers = Fibinachi.new
       fibonacci_numbers.all_fibonacci_numbers(10).should == [1, 2, 3, 5, 8]
     end
 
     it "should return all even fibonacci numbers below 40" do
-      fibonacci_numbers = Problem2.new
+      fibonacci_numbers = Fibinachi.new
       fibonacci_numbers.all_even_fibonacci_numbers(40).should == [2, 8, 34]
     end
 
     it "should total all even fibonacci numbers below 40 to 44" do
-      fibonacci_numbers = Problem2.new
+      fibonacci_numbers = Fibinachi.new
       fibonacci_numbers.total_all_even_fibonacci_numbers(40).should == 44
     end
 
     it "should total all even fibonacci numbers below 4000000 to 4613732" do
-      fibonacci_numbers = Problem2.new
+      fibonacci_numbers = Fibinachi.new
       fibonacci_numbers.total_all_even_fibonacci_numbers(4000000).should == 4613732
     end
   end
