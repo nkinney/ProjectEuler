@@ -9,23 +9,23 @@ class Map
     l_inline_product = 0
     @map.each do |row|
       row.each do |column|
-	if (y+3) < row.count
-          right = @map[x][y].to_i*@map[x][y+1].to_i*@map[x][y+2].to_i*@map[x][y+3].to_i
-	  l_inline_product = right if right > l_inline_product
-	end
+        if (y+3) < row.count
+                right = @map[x][y].to_i*@map[x][y+1].to_i*@map[x][y+2].to_i*@map[x][y+3].to_i
+          l_inline_product = right if right > l_inline_product
+        end
         if (x+3) < @map.count
-	  down = @map[x][y].to_i*@map[x+1][y].to_i*@map[x+2][y].to_i*@map[x+3][y].to_i
-          l_inline_product = down if down > l_inline_product
-	end
+          down = @map[x][y].to_i*@map[x+1][y].to_i*@map[x+2][y].to_i*@map[x+3][y].to_i
+                l_inline_product = down if down > l_inline_product
+        end
         if (y+3) < row.count and (x+3) < @map.count
-	  angle = @map[x][y].to_i*@map[x+1][y+1].to_i*@map[x+2][y+2].to_i*@map[x+3][y+3].to_i
-	  l_inline_product = angle if angle > l_inline_product
-	end
-	if (y+3) < row.count and (x+3) >= 3
-	  left_angle = @map[x][y].to_i*@map[x-1][y+1].to_i*@map[x-2][y+2].to_i*@map[x-3][y+3].to_i
-	  l_inline_product = left_angle if left_angle > l_inline_product
-	end
-	y += 1
+          angle = @map[x][y].to_i*@map[x+1][y+1].to_i*@map[x+2][y+2].to_i*@map[x+3][y+3].to_i
+          l_inline_product = angle if angle > l_inline_product
+        end
+        if (y+3) < row.count and (x+3) >= 3
+          left_angle = @map[x][y].to_i*@map[x-1][y+1].to_i*@map[x-2][y+2].to_i*@map[x-3][y+3].to_i
+          l_inline_product = left_angle if left_angle > l_inline_product
+        end
+        y += 1
       end
       y = 0
       x += 1
@@ -45,5 +45,22 @@ class Map
       count +=1
     end
     total
+  end
+
+  def self.total_value_of_numbers_in_array numbers_array
+    number_total = 0
+    numbers_array.each do |num|
+      number_total += num
+    end
+    number_total
+  end
+
+  def self.first_ten_digits_of_a_number number
+    response = ""
+
+    (1..10).each do |num|
+      response << number.to_s[num-1]
+    end
+    response
   end
 end
